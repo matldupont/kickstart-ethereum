@@ -1,27 +1,26 @@
 import { useRouter } from "next/router";
 import { Menu } from "semantic-ui-react";
+import Link from "next/link";
 
 export function Header() {
-  const router = useRouter();
+  // const router = useRouter();
   return (
     <Menu style={{ marginTop: "10px" }}>
-      <Menu.Item
-        name="browse"
+      <Link
+        href="/"
         // active={activeItem === "browse"}
         // onClick={this.handleItemClick}
       >
-        Kickstart Ethereum
-      </Menu.Item>
+        <a className="item">Kickstart Ethereum</a>
+      </Link>
 
       <Menu.Menu position="right">
-        <Menu.Item
-          name="signup"
-          // active={activeItem === "signup"}
-          // onClick={this.handleItemClick}
-        >
-          Campaigns
-        </Menu.Item>
-        <Menu.Item>+</Menu.Item>
+        <Link href="/">
+          <a className="item">Campaigns</a>
+        </Link>
+        <Link href="/campaigns/new">
+          <a className="item">+</a>
+        </Link>
       </Menu.Menu>
     </Menu>
   );
