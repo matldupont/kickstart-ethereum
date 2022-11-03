@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useCampaigns } from "../src/hooks/campaigns";
 import { getCampaigns } from "../src/utils/campaigns";
 
-function CampaignIndex({ initialCampaigns = [] }) {
+export default function CampaignIndex({ initialCampaigns = [] }) {
   const {
     data: campaigns,
     isLoading,
@@ -46,8 +46,6 @@ function CampaignIndex({ initialCampaigns = [] }) {
     </div>
   );
 }
-
-export default CampaignIndex;
 
 export async function getServerSideProps() {
   return {
